@@ -42,7 +42,8 @@ CCCFFFFFHHHHHJJGHIGGAHHIIGGIIJDHIGCEGHIFIJIH7DGIIIAHIJGEDHIDEHJJHFEEECEFEFFDECDD
 @HWI-ST0747:188:C09HWACXX:1:1101:2837:2098 1:N:0:  
 GTGCCTTGCAGGCAATTAAGTTAGCCGAGATTAAGCGAAGGTTGAAAATGTCGGATGGAGTCCGGCAGCAGCGAATGTAAA
 	```
-	Then you can specify the `--inline_null` flag to **process_radtags** This is also the default behavior and the flag can be ommitted in this case. 
+	
+Then you can specify the `--inline_null` flag to **process_radtags** This is also the default behavior and the flag can be ommitted in this case. 
 	
 2. If your data are **single-end** or **paired-end**, with a single index barcode (in blue):
 
