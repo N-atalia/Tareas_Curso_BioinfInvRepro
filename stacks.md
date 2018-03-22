@@ -1,6 +1,6 @@
 ## 4. Running the pipeline 
 
-###4.1 Clean the data
+### 4.1 Clean the data
 
 In a typical analysis, data will be received from an Illumina sequencer, or some other type of sequencer as FASTQ files. The first requirement is to demultiplex, or sort, the raw data to recover the individual samples in the Illumina library. While doing this, we will use the Phred scores provided in the FASTQ files to discard sequencing reads of low quality. These tasks are accomplished using the process_radtags program.
 
@@ -22,7 +22,7 @@ Some things to consider when running this program:
 
 * If instructed, (`-r` command line option), **process_radtags** will correct barcodes and restriction enzyme sites that are within a certain distance from the true barcode or restriction enzyme cutsite.
  
-####4.1.1 Understanding barcodes/indexes and specifying the barcode type
+#### 4.1.1 Understanding barcodes/indexes and specifying the barcode type
 
 Genotype by sequencing libraries sample the genome by selecting DNA adjacent to one or more restriction enzyme cutsites. By reducing the amount of total DNA sampled, most researchers will multiplex many samples into one molecular library. Individual samples are demarcated in the library by ligating an oligo barcode onto the restriction enzyme-associated DNA for each sample. Alternatively, an index barcode is used, where the barcode is located upstream of the sample DNA within the sequencing adaptor. Regardless of the type of barcode used, after sequencing, the data must be demultiplexed so the samples are again separated. The`process_radtags`program will perform this task, but we much specify the type of barcodes used, and where to find them in the sequencing data.  
 
@@ -254,7 +254,7 @@ process_radtags -P -p ./raw -b ./barcodes/barcodes -o ./samples/ \
                 -c -q -r --inline_index --renz_1 nlaIII --renz_2 mluCI
 ```
 
-#####The output of process_radtags
+##### The output of process_radtags
 
 The output of the **process_radtags** differs depending if you are processing single-end or paired-end data. In the case of single-end reads, the program will output one file per barcode into the output directory you specify. If the data do not have barcodes, then the file will retain its original name. 
 
@@ -268,7 +268,7 @@ sample_ACTCG.rem.2.fq
 ```
 The **process_radtags** program wants to keep the reads in *phase*, so that the first read in the `sample_XXX.1.fq file is the mate of the first read in the `sample_XXX.2.fq file. Likewise for the second pair of reads being the second record in each of the two files and so on. When one read in a pair is discarded due to low quality or a missing restriction enzyme cut site, the remaining read can't simply be output to the `sample_XXX.1.fq` or `sample_XXX.2.fq` files as it would cause the remaining reads to fall out of phase. Instead, this read is considered a remainder read and is output into the `sample_XXX.rem.1.fq` file if the paired-end was discarded, or the `sample_XXX.rem.2.fq` file if the single-end was discarded. 
 
-#####Modifying how process_radtags executes
+##### Modifying how process_radtags executes
 
  The **process_radtags** program can be modified in several ways. If your data do not have barcodes, omit the barcodes file and the program will not try to demultiplex the data. You can also disable the checking of the restriction enzyme cut site, or modify what types of quality are checked for. So, the program can be modified to only demultiplex and not clean, clean but not demultiplex, or some combination. 
  
