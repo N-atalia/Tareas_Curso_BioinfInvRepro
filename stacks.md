@@ -30,7 +30,7 @@ There are a number of different configurations possible, each of them is detaile
 
 1. If your data are **single-end** or **paired-end**, with an inline barcode present only on the single-end (marked in red):
 
-	```
+```
 @HWI-ST0747:188:C09HWACXX:1:1101:2968:2083 1:N:0:  
 TTATGATGCAGGACCAGGATGACGTCAGCACAGTGCGGGTCCTCCATGGATGCTCCTCGGTCGTGGTTGGGGGAGGAGGCA  
 +
@@ -41,7 +41,7 @@ TTATGATGCAGGCAAATAGAGTTGGATTTTGTGTCAGTAGGCGGTTAATCCCATACAATTTTACACTTTATTCAAGGTGG
 CCCFFFFFHHHHHJJGHIGGAHHIIGGIIJDHIGCEGHIFIJIH7DGIIIAHIJGEDHIDEHJJHFEEECEFEFFDECDDD  
 @HWI-ST0747:188:C09HWACXX:1:1101:2837:2098 1:N:0:  
 GTGCCTTGCAGGCAATTAAGTTAGCCGAGATTAAGCGAAGGTTGAAAATGTCGGATGGAGTCCGGCAGCAGCGAATGTAAA
-	```
+```
 	
 Then you can specify the `--inline_null` flag to **process_radtags** This is also the default behavior and the flag can be ommitted in this case. 
 	
